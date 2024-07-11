@@ -1,0 +1,73 @@
+A Decision tree is a flowchart-like structure used to make decisions or predictions. It consists of nodes representing decisions or tests on attributes, branches representing the outcome of these decisions, and leaf nodes representing final outcomes or predictions.
+
+Structure of a Decision Tree
+Root Node: Represents the entire dataset and the initial decision to be made.
+Internal Nodes: Represent decisions or tests on attributes. Each internal node has one or more branches.
+Branches: Represent the outcome of a decision or test, leading to another node.
+Leaf Nodes: Represent the final decision or prediction. No further splits occur at these nodes.
+
+How Decision Trees Work?
+The process of creating a decision tree involves:
+Selecting the Best Attribute: Using a metric like Gini impurity, entropy, or information gain, the best attribute to split the data is selected.
+Splitting the Dataset: The dataset is split into subsets based on the selected attribute.
+Repeating the Process: The process is repeated recursively for each subset, creating a new internal node or leaf node until a stopping criterion is met (e.g., all instances in a node belong to the same class or a predefined depth is reached).
+
+Metrics for Splitting
+Gini Impurity: Measures the likelihood of an incorrect classification of a new instance if it was randomly classified according to the distribution of classes in the dataset.
+Diagram of formula
+
+Entropy: Measures the amount of uncertainty or impurity in the dataset.
+Formula
+
+Information Gain: Measures the reduction in entropy or Gini impurity after a dataset is split on an attribute.
+Formula
+
+Pruning
+To overcome overfitting, pruning techniques are used. Pruning reduces the size of the tree by removing nodes that provide little power in classifying instances. There are two main types of pruning:
+Pre-pruning (Early Stopping): Stops the tree from growing once it meets certain criteria (e.g., maximum depth, minimum number of samples per leaf).
+Post-pruning: Removes branches from a fully grown tree that do not provide significant power.
+
+Advantages of Decision Trees
+Simplicity and Interpretability: Decision trees are easy to understand and interpret. The visual representation closely mirrors human decision-making processes.
+Versatility: Can be used for both classification and regression tasks.
+No Need for Feature Scaling: Decision trees do not require normalization or scaling of the data.
+Handles Non-linear Relationships: Capable of capturing non-linear relationships between features and target variables.
+
+Disadvantages of Decision Trees
+Overfitting: Decision trees can easily overfit the training data, especially if they are deep with many nodes.
+Instability: Small variations in the data can result in a completely different tree being generated.
+Bias towards Features with More Levels: Features with more levels can dominate the tree structure.
+
+How to Determine the Best Split in Decision Tree?
+Answer: To determine the best split in a decision tree, select the split that maximizes information gain or minimizes impurity.
+To determine the best split in a decision tree, follow these steps:
+
+Calculate Impurity Measure:
+Compute an impurity measure (e.g., Gini impurity or entropy) for each potential split based on the target variable’s values in the resulting subsets.
+Calculate Information Gain:
+For each split, calculate the information gain, which is the reduction in impurity achieved by splitting the data.
+Select Split with Maximum Information Gain:
+Choose the split that maximizes information gain. This split effectively separates the data into subsets that are more homogeneous with respect to the target variable.
+Repeat for Each Attribute:
+Repeat the process for all available attributes, selecting the split with the highest information gain across attributes.
+Conclusion:
+Determining the best split in a decision tree involves evaluating potential splits based on their ability to decrease impurity or increase homogeneity in the resulting subsets. By selecting splits that maximize information gain, decision trees can effectively partition the data and build predictive models that generalize well to unseen data.
+
+Why Does Overfitting Occur in Decision Trees?
+Overfitting in decision tree models occurs when the tree becomes too complex and captures noise or random fluctuations in the training data, rather than learning the underlying patterns that generalize well to unseen data. Other reasons for overfitting include:
+
+Complexity: Decision trees become overly complex, fitting training data perfectly but struggling to generalize to new data.
+Memorizing Noise: It can focus too much on specific data points or noise in the training data, hindering generalization.
+Overly Specific Rules: Might create rules that are too specific to the training data, leading to poor performance on new data.
+Feature Importance Bias: Certain features may be given too much importance by decision trees, even if they are irrelevant, contributing to overfitting.
+Sample Bias: If the training dataset is not representative, decision trees may overfit to the training data’s idiosyncrasies, resulting in poor generalization.
+Lack of Early Stopping: Without proper stopping rules, decision trees may grow excessively, perfectly fitting the training data but failing to generalize well.
+
+Strategies to Overcome Overfitting in Decision Tree Models
+Pruning Techniques
+Limiting Tree Depth
+Minimum Samples per Leaf Node
+Feature Selection and Engineering
+Ensemble Methods
+Cross-Validation
+Increasing Training Data
